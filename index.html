@@ -1,0 +1,3031 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРЕЗЕНТАЦИЯ / Анна Логунова</title>
+    <link rel="icon" type="image/png" href="images/brand-ai-anna-logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* BrandPacks Proposal Presentation Palette */
+            --dark-bg: #080404;
+            --dark-card: rgba(20, 10, 9, 0.78);
+            --dark-line: rgba(255, 130, 90, 0.2);
+            --dark-text: #FAF6F2;
+            --dark-muted: rgba(250, 246, 242, 0.64);
+
+            --light-bg: #F7F1EB;
+            --light-card: #FFFFFF;
+            --light-blush: #F3DFD6;
+            --light-line: rgba(15, 13, 14, 0.12);
+            --light-text: #0D0C0E;
+            --light-muted: rgba(13, 12, 14, 0.58);
+
+            /* Signature Vermilion / Amber / Deep Crimson Palette */
+            --vermilion: #F03E1F;
+            --vermilion-bright: #FF5926;
+            --crimson: #8A0F08;
+            --magenta: #D91656;
+
+            --wb-color: #CB11AB;
+            --ozon-color: #005BFF;
+
+            /* Exact Typography System matching BrandPacks Proposal */
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', 'Montserrat', -apple-system, sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+            font-family: var(--font-sans);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Navigation Bar */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 62px;
+            background: rgba(10, 4, 4, 0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 120, 80, 0.16);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 max(60px, calc((100% - 1640px) / 2 + 60px));
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 36px;
+            width: auto;
+            display: block;
+            transition: transform 0.25s ease;
+        }
+
+        .nav-logo:hover img {
+            transform: scale(1.04);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .nav-link {
+            color: rgba(250, 246, 242, 0.62);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.67rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 7px 11px;
+            border-radius: 99px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #fff;
+            background: rgba(240, 62, 31, 0.28);
+            border: 1px solid rgba(255, 89, 38, 0.55);
+        }
+
+        .nav-arrows {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .arrow-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 120, 80, 0.25);
+            color: var(--dark-text);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .arrow-btn:hover {
+            border-color: var(--vermilion-bright);
+            background: var(--vermilion);
+            color: #fff;
+        }
+
+        /* Slide Wrappers: Rich Red-Orange Gradient on Dark Slides */
+        .slide-wrapper-dark {
+            background:
+                radial-gradient(ellipse 68% 60% at 88% 18%, rgba(240, 62, 31, 0.34) 0%, rgba(168, 18, 10, 0.16) 48%, transparent 78%),
+                radial-gradient(ellipse 60% 55% at 12% 85%, rgba(217, 22, 86, 0.2) 0%, rgba(138, 15, 8, 0.18) 50%, transparent 78%),
+                linear-gradient(135deg, #1A0403 0%, #090303 48%, #240604 100%);
+            color: var(--dark-text);
+            border-bottom: 1px solid var(--dark-line);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-wrapper-light {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+            border-bottom: 1px solid var(--light-line);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 88px 60px 54px;
+            max-width: 1640px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =================================================================
+           SLIDE 00 (FULL-BLEED HERO MANIFESTO SLIDE): КАРТИНКА НА ВЕСЬ СЛАЙД
+           ================================================================= */
+        .manifesto-full-slide {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 96px 60px 56px;
+            overflow: hidden;
+            background: #140201;
+            border-bottom: 1px solid rgba(255, 110, 64, 0.25);
+        }
+
+        .manifesto-full-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 22%;
+            z-index: 1;
+            filter: contrast(1.06) saturate(1.1);
+        }
+
+        .manifesto-full-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 28% 50%, rgba(35, 4, 2, 0.45) 0%, rgba(18, 2, 1, 0.25) 100%),
+                linear-gradient(90deg, rgba(16, 2, 1, 0.82) 0%, rgba(24, 3, 2, 0.52) 44%, rgba(20, 2, 1, 0.08) 72%, rgba(20, 2, 1, 0.28) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .manifesto-frame-box {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: 1520px;
+            min-height: calc(100vh - 165px);
+            border: 1px solid rgba(255, 115, 70, 0.42);
+            border-radius: 36px;
+            padding: 56px 84px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+            box-shadow: inset 0 0 80px rgba(240, 62, 31, 0.08);
+        }
+
+        .manifesto-kicker {
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: #FF7A4D;
+            margin-bottom: 26px;
+        }
+
+        .manifesto-big-quote {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: clamp(2.8rem, 4.9vw, 4.85rem);
+            line-height: 1.06;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            color: #FAF4EF;
+            white-space: nowrap;
+            text-align: left;
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+        }
+
+        .manifesto-author {
+            margin-top: 32px;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(250, 244, 239, 0.78);
+        }
+
+        .manifesto-page-num {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: rgba(250, 244, 239, 0.65);
+            z-index: 4;
+        }
+
+        /* Editorial Top Meta Bar with Unified Slide Capsule */
+        .proposal-meta-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            font-family: var(--font-sans);
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 3;
+        }
+
+        .slide-wrapper-dark .proposal-meta-bar {
+            border-bottom: 1px solid rgba(255, 130, 90, 0.22);
+            color: #FAF6F2;
+        }
+
+        .slide-wrapper-light .proposal-meta-bar {
+            border-bottom: 1px solid rgba(13, 12, 14, 0.14);
+            color: var(--light-text);
+        }
+
+        .meta-left {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .slide-pill-capsule {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 99px;
+            overflow: hidden;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+
+        .slide-wrapper-dark .slide-pill-capsule {
+            border: 1px solid rgba(250, 246, 242, 0.38);
+            color: #FAF6F2;
+        }
+
+        .slide-wrapper-light .slide-pill-capsule {
+            border: 1px solid rgba(13, 12, 14, 0.38);
+            color: var(--light-text);
+        }
+
+        .slide-pill-capsule span {
+            padding: 5px 14px;
+        }
+
+        .slide-wrapper-dark .slide-pill-capsule span:first-child {
+            border-right: 1px solid rgba(250, 246, 242, 0.38);
+        }
+
+        .slide-wrapper-light .slide-pill-capsule span:first-child {
+            border-right: 1px solid rgba(13, 12, 14, 0.38);
+        }
+
+        .meta-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            opacity: 0.78;
+        }
+
+        /* Supersized Editorial Display Typography (Russian Titles) */
+        .editorial-serif-display {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            font-size: clamp(3.1rem, 5.3vw, 5.2rem);
+            line-height: 0.94;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .editorial-serif-display .sup-num {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: clamp(1.35rem, 2.1vw, 2rem);
+            color: var(--vermilion-bright);
+            vertical-align: top;
+            margin-left: 8px;
+            letter-spacing: -0.02em;
+            display: inline-block;
+            transform: translateY(4px);
+        }
+
+        /* Tight Modern Sans Headlines */
+        .proposal-sans-h2 {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: clamp(2.1rem, 3.5vw, 3.3rem);
+            line-height: 1.06;
+            letter-spacing: -0.03em;
+        }
+
+        .proposal-sans-h2 strong {
+            font-weight: 700;
+        }
+
+        .slide-top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 32px;
+            margin-bottom: 26px;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Corner Soft Glows on Light Slides */
+        .corner-glow-tr {
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 480px;
+            height: 480px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(240, 62, 31, 0.38) 0%, rgba(217, 22, 86, 0.14) 45%, transparent 72%);
+            filter: blur(36px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .corner-glow-tl {
+            position: absolute;
+            top: -120px;
+            left: -120px;
+            width: 460px;
+            height: 460px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(240, 62, 31, 0.42) 0%, rgba(240, 62, 31, 0.12) 48%, transparent 72%);
+            filter: blur(34px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Buttons */
+        .btn-proposal {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 22px;
+            border-radius: 99px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .slide-wrapper-dark .btn-proposal {
+            background: linear-gradient(135deg, #FF5926 0%, #D9230F 100%);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            box-shadow: 0 8px 24px rgba(240, 62, 31, 0.35);
+        }
+
+        .slide-wrapper-dark .btn-proposal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(240, 62, 31, 0.5);
+        }
+
+        .slide-wrapper-light .btn-proposal {
+            background: var(--light-text);
+            color: var(--light-bg);
+            border: 1px solid var(--light-text);
+        }
+
+        .slide-wrapper-light .btn-proposal:hover {
+            background: var(--vermilion);
+            border-color: var(--vermilion);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* =====================================================
+           SLIDE 02: ЧЕМ ЗАНИМАЮСЬ (SENIOR TEAM REFERENCE STYLE)
+           ===================================================== */
+        .senior-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .senior-giant-title {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            font-size: clamp(3.8rem, 5.8vw, 6.4rem);
+            line-height: 0.92;
+            letter-spacing: -0.025em;
+            text-transform: uppercase;
+            color: #FAF6F2;
+            white-space: nowrap;
+            user-select: none;
+            position: relative;
+            z-index: 1;
+            margin-left: 0;
+        }
+
+        .senior-meta-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 22px;
+            padding-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .senior-pill-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            font-family: var(--font-sans);
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #FAF6F2;
+        }
+
+        .senior-pill-capsule {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(250, 246, 242, 0.38);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .senior-pill-capsule span {
+            padding: 5px 14px;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+        }
+
+        .senior-pill-capsule span:first-child {
+            border-right: 1px solid rgba(250, 246, 242, 0.38);
+        }
+
+        .senior-subtext-right {
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            line-height: 1.45;
+            color: rgba(250, 246, 242, 0.76);
+            text-align: right;
+            max-width: 340px;
+        }
+
+        /* Main lower area overlapping the giant serif title just like SENIOR TEAM */
+        .senior-stage-grid {
+            display: grid;
+            grid-template-columns: 0.34fr 0.66fr;
+            gap: 32px;
+            align-items: end;
+            margin-top: -34px;
+            position: relative;
+            z-index: 4;
+            margin-bottom: 18px;
+        }
+
+        .senior-left-stores {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-bottom: 4px;
+        }
+
+        .senior-kicker-red {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--vermilion-bright);
+            line-height: 1.35;
+        }
+
+        .senior-desc-left {
+            font-size: 0.82rem;
+            line-height: 1.45;
+            color: rgba(250, 246, 242, 0.72);
+            margin-bottom: 4px;
+        }
+
+        /* Compact Store Pills / Buttons below on the left */
+        .compact-stores-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .compact-store-box {
+            background: linear-gradient(135deg, rgba(240, 62, 31, 0.2) 0%, rgba(20, 7, 6, 0.92) 100%);
+            border: 1px solid rgba(255, 95, 45, 0.48);
+            border-radius: 12px;
+            padding: 11px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .compact-store-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .compact-store-title {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 0.92rem;
+            color: #fff;
+        }
+
+        .mp-logos-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .mp-logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 20px;
+            padding: 0 7px;
+            border-radius: 5px;
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 0.6rem;
+            letter-spacing: 0.03em;
+            color: #fff;
+        }
+
+        .badge-wb {
+            background: linear-gradient(135deg, #CB11AB 0%, #8B00FF 100%);
+        }
+
+        .badge-ozon {
+            background: linear-gradient(135deg, #005BFF 0%, #0037A5 100%);
+        }
+
+        .compact-btns-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .mp-btn-compact {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 11px;
+            border-radius: 7px;
+            background: linear-gradient(135deg, #FF5926 0%, #D9230F 100%);
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 0.66rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .mp-btn-compact:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.12);
+        }
+
+        /* 4 Staggered Black-Red-Orange Photo Cards (Exact SENIOR TEAM Card Grid) */
+        .senior-cards-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            align-items: end;
+        }
+
+        .senior-photo-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 110, 60, 0.38);
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.65);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+            background: #120302;
+        }
+
+        .senior-photo-card.extra-tall {
+            height: 410px;
+        }
+
+        .senior-photo-card.tall {
+            height: 360px;
+        }
+
+        .senior-photo-card.short {
+            height: 318px;
+        }
+
+        .senior-photo-card:hover {
+            transform: translateY(-6px);
+            border-color: #FF7A4D;
+        }
+
+        .senior-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.45s ease;
+        }
+
+        .senior-photo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .senior-card-shade {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 2, 2, 0.05) 0%, rgba(18, 3, 2, 0.35) 50%, rgba(8, 2, 2, 0.94) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 18px 16px;
+        }
+
+        .senior-card-title {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .senior-card-sub {
+            font-family: var(--font-sans);
+            font-size: 0.76rem;
+            line-height: 1.32;
+            color: rgba(250, 246, 242, 0.78);
+        }
+
+        /* Bottom Timeline: Мой профессиональный путь */
+        .path-bottom-section {
+            border-top: 1px solid rgba(255, 120, 80, 0.32);
+            padding-top: 14px;
+            position: relative;
+            z-index: 4;
+        }
+
+        .path-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .path-label {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: rgba(250, 246, 242, 0.68);
+        }
+
+        .path-steps-flow {
+            display: flex;
+            align-items: stretch;
+            gap: 8px;
+        }
+
+        .path-card {
+            flex: 1;
+            background: rgba(255, 90, 40, 0.05);
+            border: 1px solid rgba(255, 120, 80, 0.2);
+            border-radius: 10px;
+            padding: 15px 16px;
+            display: flex;
+            align-items: center;
+            cursor: default;
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .path-card:hover {
+            transform: translateY(-4px);
+            background: linear-gradient(145deg, rgba(255, 89, 38, 0.34) 0%, rgba(217, 22, 86, 0.2) 100%);
+            border-color: var(--vermilion-bright);
+            box-shadow: 0 10px 28px rgba(240, 62, 31, 0.36), 0 0 18px rgba(240, 62, 31, 0.24) inset;
+        }
+
+        .path-card .p-name {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.02rem;
+            line-height: 1.28;
+            color: var(--dark-text);
+        }
+
+        .path-arrow {
+            display: flex;
+            align-items: center;
+            color: var(--vermilion-bright);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            opacity: 0.85;
+            user-select: none;
+        }
+
+        /* =====================================================
+           SLIDE 03: ФУНДАМЕНТАЛЬНЫЕ НАВЫКИ (AGENDA 03 STYLE)
+           ===================================================== */
+        .agenda-slide-wrap {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+            border-bottom: 1px solid var(--light-line);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top split bar: Left Vermilion Block + Right Cream Block */
+        .agenda-top-split {
+            display: grid;
+            grid-template-columns: 0.36fr 0.64fr;
+            min-height: 92px;
+            border-bottom: 1px solid rgba(13, 12, 14, 0.12);
+        }
+
+        .agenda-top-orange {
+            background: var(--vermilion);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 26px 40px 22px 60px;
+        }
+
+        .agenda-capsule {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 99px;
+            overflow: hidden;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .agenda-capsule span {
+            padding: 5px 14px;
+        }
+
+        .agenda-capsule span:first-child {
+            border-right: 1px solid rgba(255, 255, 255, 0.65);
+        }
+
+        .agenda-orange-label {
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .agenda-top-cream {
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 26px 60px 22px 44px;
+        }
+
+        .agenda-cream-title {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: clamp(3.8rem, 5.4vw, 5.8rem);
+            line-height: 0.92;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            color: var(--light-text);
+        }
+
+        .agenda-cream-right {
+            font-family: var(--font-sans);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--light-text);
+            flex-shrink: 0;
+        }
+
+        /* Architectural Fluted Glass + Overlapping Black Container */
+        .agenda-body-stage {
+            max-width: 1640px;
+            margin: 0 auto;
+            padding: 0 60px 28px;
+            position: relative;
+        }
+
+        /* Fluted red-orange ribbed glass backdrop (left & top) */
+        .fluted-glass-backdrop {
+            width: 90%;
+            height: 320px;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.09) 0px,
+                    rgba(255, 255, 255, 0.09) 6px,
+                    rgba(15, 2, 1, 0.36) 6px,
+                    rgba(15, 2, 1, 0.36) 14px
+                ),
+                radial-gradient(circle at 60% 35%, #FF7B38 0%, #F03E1F 45%, #8A0F08 85%, #2B0402 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(240, 62, 31, 0.18);
+        }
+
+        /* Subtle dark silhouettes behind the fluted glass just like reference */
+        .fluted-glass-backdrop::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 18% 55% at 14% 72%, rgba(10, 2, 2, 0.85) 0%, transparent 70%),
+                radial-gradient(ellipse 14% 45% at 74% 38%, rgba(10, 2, 2, 0.7) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Overlapping Obsidian Black Box shifted right & down, clearly split into 2 columns */
+        .agenda-black-panel {
+            margin-top: -272px;
+            margin-left: 11%;
+            background:
+                radial-gradient(circle at 68% 14%, rgba(240, 62, 31, 0.32) 0%, rgba(138, 15, 8, 0.14) 42%, transparent 70%),
+                #070607;
+            color: #FAF6F2;
+            padding: 26px 38px 26px;
+            position: relative;
+            z-index: 3;
+            box-shadow: -20px 24px 60px rgba(0, 0, 0, 0.45);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 44px;
+        }
+
+        /* Explicit vertical divider between Hard Skills and Soft Skills columns */
+        .agenda-col {
+            position: relative;
+        }
+
+        .agenda-col:first-child {
+            padding-right: 22px;
+            border-right: 1px solid rgba(240, 62, 31, 0.45);
+        }
+
+        .agenda-col-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid rgba(240, 62, 31, 0.55);
+        }
+
+        .agenda-col-title {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 0.86rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+
+        .agenda-section-pill {
+            background: var(--vermilion);
+            color: #070607;
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 11px;
+            border-radius: 99px;
+        }
+
+        .agenda-items-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px 18px;
+        }
+
+        .agenda-row-divider {
+            grid-column: 1 / -1;
+            height: 1px;
+            background: rgba(240, 62, 31, 0.45);
+            margin: 2px 0;
+        }
+
+        .agenda-skill-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .agenda-big-num {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 2.3vw, 2.25rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            color: var(--vermilion);
+        }
+
+        .agenda-skill-name {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 0.8rem;
+            line-height: 1.26;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: #FAF6F2;
+        }
+
+        /* =====================================================
+           SLIDE 03 BOTTOM: SEPARATED & CENTERED BENTO BLOCK
+           ===================================================== */
+        .agenda-tools-bento-wrap {
+            width: 100%;
+            margin: 18px auto 0;
+            background:
+                radial-gradient(circle at 16% 0%, rgba(240, 62, 31, 0.28) 0%, rgba(138, 15, 8, 0.1) 42%, transparent 70%),
+                radial-gradient(circle at 78% 0%, rgba(240, 62, 31, 0.22) 0%, rgba(138, 15, 8, 0.08) 45%, transparent 72%),
+                #070607;
+            padding: 18px 28px 20px;
+            position: relative;
+            z-index: 4;
+            box-shadow: 0 20px 52px rgba(0, 0, 0, 0.36);
+            display: grid;
+            grid-template-columns: 0.37fr 0.63fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .tools-bento-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tools-bento-group:first-child {
+            padding-right: 24px;
+            border-right: 1.5px dashed rgba(240, 62, 31, 0.6);
+        }
+
+        .tools-bento-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .tools-bento-label {
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+
+        /* Bento Grid 1: ПРОГРАММЫ (4 cols x 2 rows = 8 cells for 5 tiles) */
+        .bento-grid-programs {
+            display: grid;
+            grid-template-columns: 1.28fr 0.96fr 0.96fr 0.96fr;
+            grid-template-rows: repeat(2, 72px);
+            gap: 8px;
+        }
+
+        /* Bento Grid 2: НЕЙРОСЕТИ (7 cols x 2 rows = 14 cells for 10 tiles) */
+        .bento-grid-ai {
+            display: grid;
+            grid-template-columns: 1.18fr 1.12fr 0.92fr 1.22fr 0.98fr 0.96fr 0.98fr;
+            grid-template-rows: repeat(2, 72px);
+            gap: 8px;
+        }
+
+        /* Individual Bento Tile matching uploaded dark+vermilion reference */
+        .bento-tool-tile {
+            position: relative;
+            background:
+                radial-gradient(circle at 18% 0%, rgba(240, 62, 31, 0.16) 0%, transparent 68%),
+                rgba(10, 6, 6, 0.92);
+            border: 1px solid rgba(240, 62, 31, 0.52);
+            border-radius: 13px;
+            padding: 9px 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: default;
+        }
+
+        .bento-tool-tile:hover {
+            transform: translateY(-2px);
+            border-color: #FF6B3D;
+            background:
+                radial-gradient(circle at 22% 0%, rgba(255, 89, 38, 0.32) 0%, rgba(138, 15, 8, 0.16) 72%),
+                #0E0707;
+            box-shadow: 0 8px 22px rgba(240, 62, 31, 0.26);
+        }
+
+        /* Span variants for different tile sizes */
+        .bento-tool-tile.tile-tall {
+            grid-row: span 2;
+            padding: 12px 13px;
+        }
+
+        .bento-tool-tile.tile-wide {
+            grid-column: span 2;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px 14px;
+        }
+
+        .bento-tool-tile.tile-compact {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 2px;
+            padding: 7px 10px;
+        }
+
+        .tile-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        .tile-wide-left {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            min-width: 0;
+        }
+
+        .tile-icon-box {
+            width: 21px;
+            height: 21px;
+            border-radius: 6px;
+            background: rgba(240, 62, 31, 0.14);
+            border: 1px solid rgba(240, 62, 31, 0.38);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #FAF6F2;
+        }
+
+        .bento-tool-tile.tile-tall .tile-icon-box {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+        }
+
+        .bento-tool-tile.tile-wide .tile-icon-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+        }
+
+        .tile-icon-box svg {
+            width: 13px;
+            height: 13px;
+            display: block;
+        }
+
+        .bento-tool-tile.tile-tall .tile-icon-box svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .bento-tool-tile.tile-wide .tile-icon-box svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .tile-name {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.78rem;
+            line-height: 1.1;
+            letter-spacing: -0.015em;
+            color: #FAF6F2;
+        }
+
+        .bento-tool-tile.tile-tall .tile-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            line-height: 1.14;
+        }
+
+        .bento-tool-tile.tile-wide .tile-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .tile-sub {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 0.64rem;
+            line-height: 1.1;
+            letter-spacing: 0.01em;
+            color: rgba(250, 246, 242, 0.58);
+            margin-top: 2px;
+            white-space: nowrap;
+            display: block;
+        }
+
+        /* =====================================================
+           PORTFOLIO GRIDS (SLIDES 03, 04, 05, 06, 07)
+           ===================================================== */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 26px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .visual-item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .img-zoom {
+            width: 100%;
+            height: 100%;
+            max-height: 510px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: zoom-in;
+            transition: transform 0.28s ease, box-shadow 0.28s ease;
+        }
+
+        .slide-wrapper-dark .img-zoom {
+            border: 1px solid rgba(255, 120, 80, 0.24);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+        }
+
+        .slide-wrapper-light .img-zoom {
+            border: 1px solid var(--light-line);
+            box-shadow: 0 14px 34px rgba(13, 12, 14, 0.08);
+        }
+
+        .img-zoom:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-clean {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            max-height: 490px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #000;
+            border: 1px solid rgba(255, 120, 80, 0.25);
+        }
+
+        .visual-caption {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 0.96rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .idx-tag {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--vermilion-bright);
+            font-weight: 700;
+        }
+
+        /* Slide 08 Fashion strict 3:4 format for both photos and video */
+        .fashion-media-frame {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            max-height: 520px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--light-line);
+            background: #000;
+            box-shadow: 0 14px 34px rgba(13, 12, 14, 0.08);
+        }
+
+        .fashion-media-frame img,
+        .fashion-media-frame video {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Полноэкранный режим для видео: отдельные правила без -moz-, чтобы Chrome/Safari не отбрасывали селектор */
+        video:fullscreen,
+        .video-clean:fullscreen,
+        .fashion-media-frame video:fullscreen {
+            object-fit: contain !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            aspect-ratio: auto !important;
+            border: none !important;
+            border-radius: 0 !important;
+            background: #000 !important;
+        }
+
+        video:-webkit-full-screen,
+        .video-clean:-webkit-full-screen,
+        .fashion-media-frame video:-webkit-full-screen {
+            object-fit: contain !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            aspect-ratio: auto !important;
+            border: none !important;
+            border-radius: 0 !important;
+            background: #000 !important;
+        }
+
+        video.is-fullscreen {
+            object-fit: contain !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            aspect-ratio: auto !important;
+            border: none !important;
+            border-radius: 0 !important;
+            background: #000 !important;
+        }
+
+        .fashion-caption-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 4px;
+        }
+
+        .case-ext-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 99px;
+            background: var(--light-text);
+            color: var(--light-bg);
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .case-ext-link:hover {
+            background: var(--vermilion);
+            color: #fff;
+        }
+
+        /* =====================================================
+           SLIDE 09: РАЗБОР КАРТОЧКИ (КРУПНЫЕ СЛАЙДЫ + ПЛЮСЫ / МИНУСЫ / ЧТО ПОПРАВИТЬ)
+           ===================================================== */
+        .audit-large-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .audit-slide-card {
+            background: rgba(20, 9, 8, 0.82);
+            border: 1px solid rgba(255, 120, 80, 0.28);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .audit-slide-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--vermilion-bright);
+        }
+
+        .audit-slide-img-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            background: #140807;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 120, 80, 0.22);
+        }
+
+        .audit-slide-img-wrap img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: contain;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .audit-slide-img-wrap:hover img {
+            transform: scale(1.03);
+        }
+
+        .audit-slide-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(10, 4, 4, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 120, 80, 0.4);
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 0.66rem;
+            font-weight: 700;
+            padding: 4px 9px;
+            border-radius: 6px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            pointer-events: none;
+        }
+
+        .audit-slide-body {
+            padding: 14px 16px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .audit-point {
+            font-size: 0.79rem;
+            line-height: 1.38;
+            padding: 8px 10px;
+            border-radius: 9px;
+        }
+
+        .audit-point-plus {
+            background: rgba(74, 222, 128, 0.08);
+            border-left: 3px solid #4ADE80;
+            color: rgba(250, 246, 242, 0.94);
+        }
+
+        .audit-point-minus {
+            background: rgba(248, 113, 113, 0.08);
+            border-left: 3px solid #F87171;
+            color: rgba(250, 246, 242, 0.94);
+        }
+
+        .audit-point-fix {
+            background: linear-gradient(135deg, rgba(240, 62, 31, 0.22) 0%, rgba(138, 15, 8, 0.26) 100%);
+            border-left: 3px solid #FF6B3D;
+            color: #FFFFFF;
+        }
+
+        .audit-point-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.64rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 3px;
+        }
+
+        .audit-point-plus .audit-point-label { color: #4ADE80; }
+        .audit-point-minus .audit-point-label { color: #F87171; }
+        .audit-point-fix .audit-point-label { color: #FF8559; }
+
+        .audit-bottom-split {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            align-items: stretch;
+            position: relative;
+            z-index: 3;
+        }
+
+        .audit-funnel-box {
+            background: rgba(20, 9, 8, 0.86);
+            border: 1px solid rgba(255, 120, 80, 0.34);
+            border-radius: 16px;
+            padding: 20px 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .audit-funnel-title {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #FF7A4D;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .audit-funnel-steps {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 14px;
+            flex: 1;
+        }
+
+        .audit-funnel-step {
+            background: linear-gradient(145deg, rgba(255, 90, 40, 0.14) 0%, rgba(120, 14, 10, 0.24) 100%);
+            border: 1px solid rgba(255, 130, 90, 0.28);
+            border-radius: 12px;
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .audit-funnel-step-num {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #FF8559;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .audit-funnel-step-head {
+            font-family: var(--font-sans);
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.25;
+        }
+
+        .audit-funnel-step-desc {
+            font-size: 0.86rem;
+            line-height: 1.4;
+            color: rgba(250, 246, 242, 0.88);
+        }
+
+        .audit-render-card {
+            background: rgba(20, 9, 8, 0.86);
+            border: 1px solid rgba(255, 120, 80, 0.34);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .audit-render-img-wrap {
+            position: relative;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .audit-render-img-wrap img,
+        .audit-render-img-wrap video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .audit-render-caption {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #FF8559;
+            text-align: center;
+        }
+
+        /* =====================================================
+           SLIDE 09: ТВЕРДЫЕ РЕЗУЛЬТАТЫ В КРУГАХ + ПОДВАЛ САЙТА
+           ===================================================== */
+        .concentric-stage {
+            position: relative;
+            z-index: 3;
+            margin: 10px 0 20px;
+        }
+
+        .circles-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .concentric-metric-card {
+            background: rgba(255, 90, 40, 0.05);
+            border: 1px solid rgba(255, 120, 80, 0.22);
+            border-radius: 20px;
+            padding: 22px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.28s ease, border-color 0.28s ease;
+        }
+
+        .concentric-metric-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--vermilion-bright);
+        }
+
+        .concentric-disc-outer {
+            width: 204px;
+            height: 204px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 75% 25%, #FF6B2B 0%, #F03E1F 42%, #D91656 78%, #590619 100%);
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 18px 48px rgba(240, 62, 31, 0.32);
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .concentric-disc-mid {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            background: rgba(14, 8, 10, 0.45);
+            padding: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .concentric-disc-core {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #0B0303;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            box-shadow: inset 0 0 24px rgba(240, 62, 31, 0.28);
+        }
+
+        .circle-val {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: clamp(2.3rem, 3.1vw, 3rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            color: #FAF6F2;
+        }
+
+        .circle-unit {
+            font-family: var(--font-mono);
+            font-size: 0.66rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--vermilion-bright);
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .circle-caption {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .circle-sub {
+            font-size: 0.82rem;
+            line-height: 1.4;
+            color: var(--dark-muted);
+            max-width: 24ch;
+        }
+
+        /* Achievements Block on Slide 10 */
+        .achievements-section {
+            border-top: 1px solid rgba(255, 120, 80, 0.32);
+            padding-top: 16px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .achievements-title {
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #FF7A4D;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .achievement-card {
+            background:
+                linear-gradient(rgba(14, 6, 8, 0.46), rgba(14, 6, 8, 0.46)),
+                radial-gradient(circle at 75% 25%, #FF6B2B 0%, #F03E1F 42%, #D91656 78%, #590619 100%);
+            border: 1px solid rgba(255, 160, 120, 0.28);
+            border-radius: 14px;
+            padding: 22px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: default;
+            box-shadow: 0 14px 36px rgba(18, 4, 4, 0.45);
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-4px);
+            background:
+                linear-gradient(rgba(14, 6, 8, 0.28), rgba(14, 6, 8, 0.28)),
+                radial-gradient(circle at 75% 25%, #FF6B2B 0%, #F03E1F 42%, #D91656 78%, #590619 100%);
+            border-color: rgba(255, 180, 140, 0.55);
+            box-shadow: 0 18px 44px rgba(240, 62, 31, 0.32);
+        }
+
+        .achievement-text {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.24rem;
+            line-height: 1.28;
+            color: #FFFFFF;
+            text-align: center;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Site Footer replica */
+        .site-footer {
+            margin-top: 16px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 120, 80, 0.22);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .footer-copy {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--dark-muted);
+        }
+
+        .footer-socials {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-icon-link {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 120, 80, 0.24);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-icon-link:hover {
+            background: var(--vermilion);
+            border-color: var(--vermilion);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .social-icon-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 26px;
+            left: 26px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--vermilion);
+            color: #fff;
+            border: none;
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 1.15rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 22px rgba(240, 62, 31, 0.4);
+            transition: transform 0.2s;
+            z-index: 900;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.94);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            cursor: zoom-out;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 96vw;
+            max-height: 94vh;
+            object-fit: contain;
+        }
+
+        @media (max-width: 1180px) {
+            .experience-top-grid, .skills-bento-wrapper, .bento-6-grid, .grid-2, .grid-3, .grid-4, .circles-row, .duties-4-grid, .audit-large-grid {
+                grid-template-columns: 1fr;
+            }
+            .path-steps-flow {
+                flex-direction: column;
+            }
+            .path-arrow {
+                transform: rotate(90deg);
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="https://brandianna.ru/" target="_blank" class="nav-logo" aria-label="brand-AI-anna">
+            <img src="images/brandianna-logo-03.webp" alt="brand-AI-anna logo">
+        </a>
+
+        <nav class="nav-links">
+            <a href="#slide-1" class="nav-link active">01. Обложка</a>
+            <a href="#slide-2" class="nav-link">02. Опыт</a>
+            <a href="#slide-3" class="nav-link">03. Навыки</a>
+            <a href="#slide-4" class="nav-link">04. Категории</a>
+            <a href="#slide-5" class="nav-link">05. Трафаретово</a>
+            <a href="#slide-6" class="nav-link">06. Инженерия</a>
+            <a href="#slide-7" class="nav-link">07. Видеообложки</a>
+            <a href="#slide-8" class="nav-link">08. Fashion</a>
+            <a href="#slide-9" class="nav-link">09. Разбор карточки</a>
+            <a href="#slide-10" class="nav-link">10. Цифры</a>
+        </nav>
+
+        <div class="nav-arrows">
+            <button class="arrow-btn" onclick="prevSlide()">←</button>
+            <button class="arrow-btn" onclick="nextSlide()">→</button>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         SLIDE 01: ОБЛОЖКА + ЦИТАТА НА ВЕСЬ ЭКРАН С ПОРТРЕТОМ В КОНТРОВОМ СВЕТЕ
+         ================================================================= -->
+    <section class="manifesto-full-slide nav-section" id="slide-1">
+        <video id="hero-manifesto-video" src="images/Woman_adjusting_glasses_and_winking_3e0f4e94_1080p.mp4?v=glitch1" poster="images/anna_backlit_manifesto.jpg" class="manifesto-full-bg" autoplay muted loop playsinline></video>
+        <div class="manifesto-full-overlay"></div>
+
+        <div class="manifesto-frame-box">
+            <span class="manifesto-kicker">АННА ЛОГУНОВА • AI-ДИЗАЙНЕР МАРКЕТПЛЕЙСОВ И&nbsp;E-COMMERCE</span>
+            <blockquote class="manifesto-big-quote">
+                “СИЛЬНЫЙ&nbsp;ВИЗУАЛ,<br>
+                ТОЧНЫЙ&nbsp;СМЫСЛ<br>
+                И&nbsp;ИЗМЕРИМЫЙ<br>
+                РОСТ&nbsp;ПРОДАЖ.”
+            </blockquote>
+            <span class="manifesto-author">ПРЕЗЕНТАЦИЯ ПОРТФОЛИО И&nbsp;ПРОФЕССИОНАЛЬНОГО ОПЫТА • 2026</span>
+        </div>
+
+        <span class="manifesto-page-num">01 / 10</span>
+    </section>
+
+    <!-- =================================================================
+         SLIDE 02: SENIOR TEAM REFERENCE STYLE — ЧЕМ ЗАНИМАЮСЬ + 4 ФОТО-КАРТОЧКИ + МАГАЗИНЫ + ПУТЬ
+         ================================================================= -->
+    <div class="slide-wrapper-dark">
+        <section class="slide nav-section" id="slide-2">
+            <div>
+                <div class="senior-top-bar">
+                    <h2 class="senior-giant-title">
+                        ТЕКУЩИЕ ПРОЕКТЫ<br>
+                        И&nbsp;ЗАДАЧИ
+                    </h2>
+
+                    <div class="senior-meta-right">
+                        <div class="senior-pill-group">
+                            <span>ОПЫТ РАБОТЫ</span>
+                            <div class="senior-pill-capsule">
+                                <span>СЛАЙД</span>
+                                <span>02</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lower overlapping section: Left = Description + Compact Store Buttons, Right = 4 Thematic Photo Cards -->
+                <div class="senior-stage-grid">
+                    <div class="senior-left-stores">
+                        <p class="senior-desc-left" style="font-size: 0.94rem; line-height: 1.5; color: rgba(250, 246, 242, 0.82); margin-bottom: 8px;">
+                            Более 2&nbsp;лет сопровождаю магазины селлеров на&nbsp;Wildberries и&nbsp;Ozon — от&nbsp;карточек и&nbsp;видеообложек до&nbsp;полиграфии и&nbsp;базы контента.
+                        </p>
+
+                        <div class="compact-stores-stack">
+                            <!-- Compact Store 1: Трафаретово -->
+                            <div class="compact-store-box">
+                                <div class="compact-store-top">
+                                    <span class="compact-store-title">Трафаретово (ХДФ декор)</span>
+                                    <div class="mp-logos-group">
+                                        <span class="mp-logo-badge badge-wb">WB</span>
+                                        <span class="mp-logo-badge badge-ozon">OZON</span>
+                                    </div>
+                                </div>
+                                <div class="compact-btns-row">
+                                    <a href="https://www.wildberries.ru/seller/46111" target="_blank" class="mp-btn-compact">Магазин на&nbsp;WB ↗</a>
+                                </div>
+                            </div>
+
+                            <!-- Compact Store 2: OGNImo -->
+                            <div class="compact-store-box">
+                                <div class="compact-store-top">
+                                    <span class="compact-store-title">OGNImo (свет и&nbsp;игрушки)</span>
+                                    <div class="mp-logos-group">
+                                        <span class="mp-logo-badge badge-ozon">OZON</span>
+                                        <span class="mp-logo-badge badge-wb">WB</span>
+                                    </div>
+                                </div>
+                                <div class="compact-btns-row">
+                                    <a href="https://www.ozon.ru/product/prozhektor-dlya-arhitekturnogo-i-landshaftnogo-osveshcheniya-220v-36w-3000k-teplyy-belyy-ugol-1760976127/?_bctx=CAQQgo4n&at=1nuq1XuqqJeKnlYhy7uASF8tWzb7TNcf&hs=1&sh=_LVIrkjfqw" target="_blank" class="mp-btn-compact">Прожектор 36W ↗</a>
+                                    <a href="https://www.ozon.ru/product/umnaya-girlyanda-piksel-15-m-rgbic-segmentnoe-upravlenie-30-diodami-cherez-smartfon-pult-du-1643221075/?_bctx=CAQQgo4n&at=1nuq1_PsYPcjK5jJcD9o4LWp-OaMXZf2&hs=1&sh=_LVIrhgZbQ" target="_blank" class="mp-btn-compact">Гирлянда RGBIC ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: 4 Thematic Black-Red-Orange Photo Cards overlapping the giant title -->
+                    <div class="senior-cards-4">
+                        <div class="senior-photo-card tall">
+                            <img src="images/duty_01_cards.jpg" alt="Карточки товаров, видеообложки и рич-контент" style="transform: scale(1.18) translateY(-22px);">
+                            <div class="senior-card-shade">
+                                <div class="senior-card-title">01 / КАРТОЧКИ И&nbsp;ВИДЕО</div>
+                                <div class="senior-card-sub">Карточки товаров, видеообложки и&nbsp;рич-контент</div>
+                            </div>
+                        </div>
+
+                        <div class="senior-photo-card short">
+                            <img src="images/duty_02_smartphones.jpg" alt="Креативы для соцсетей и рекламные баннеры">
+                            <div class="senior-card-shade">
+                                <div class="senior-card-title">02 / РЕКЛАМА И&nbsp;SMM</div>
+                                <div class="senior-card-sub">Креативный контент для&nbsp;соцсетей и&nbsp;рекламные баннеры</div>
+                            </div>
+                        </div>
+
+                        <div class="senior-photo-card tall">
+                            <img src="images/duty_03_print.jpg" alt="Печатная продукция: флаеры, этикетки, буклеты">
+                            <div class="senior-card-shade">
+                                <div class="senior-card-title">03 / ПОЛИГРАФИЯ</div>
+                                <div class="senior-card-sub">Печатная продукция: флаеры, этикетки, буклеты</div>
+                            </div>
+                        </div>
+
+                        <div class="senior-photo-card extra-tall">
+                            <img src="images/duty_04_clouds.jpg" alt="Структурирование базы контента в облаке" style="transform: scale(1.08) translateY(-12px);">
+                            <div class="senior-card-shade">
+                                <div class="senior-card-title">04 / БАЗА КОНТЕНТА</div>
+                                <div class="senior-card-sub">Структурирую и&nbsp;веду базу контента в&nbsp;облачных хранилищах</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Full-Width Path Flow -->
+            <div class="path-bottom-section">
+                <div class="path-header-row">
+                    <span class="path-label">// МОЙ ПРОФЕССИОНАЛЬНЫЙ ПУТЬ — ОТ&nbsp;ФУНДАМЕНТА ДИЗАЙНА ДО&nbsp;AI-АВТОМАТИЗАЦИИ</span>
+                </div>
+                <div class="path-steps-flow">
+                    <div class="path-card">
+                        <div class="p-name">Графический дизайн и&nbsp;полиграфия</div>
+                    </div>
+                    <span class="path-arrow">→</span>
+                    <div class="path-card">
+                        <div class="p-name">Работа с&nbsp;мировыми микростоками</div>
+                    </div>
+                    <span class="path-arrow">→</span>
+                    <div class="path-card">
+                        <div class="p-name">Amazon и&nbsp;первые<br>AI&#8209;генерации</div>
+                    </div>
+                    <span class="path-arrow">→</span>
+                    <div class="path-card">
+                        <div class="p-name">Селлеры Ozon<br>и&nbsp;Wildberries</div>
+                    </div>
+                    <span class="path-arrow">→</span>
+                    <div class="path-card">
+                        <div class="p-name">Коммерческое<br>AI&#8209;фото и&nbsp;видео</div>
+                    </div>
+                    <span class="path-arrow">→</span>
+                    <div class="path-card">
+                        <div class="p-name">Агентные системы и&nbsp;автоматизация</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =================================================================
+         SLIDE 03: AGENDA 03 REFERENCE STYLE — ФУНДАМЕНТАЛЬНЫЕ НАВЫКИ (2 ЧЕТКИЕ КОЛОНКИ)
+         ================================================================= -->
+    <div class="agenda-slide-wrap nav-section" id="slide-3" style="padding-top: 62px;">
+        <!-- Top Split Header Bar: Orange Block on Left + Cream Block on Right -->
+        <div class="agenda-top-split">
+            <div class="agenda-top-orange">
+                <div class="agenda-capsule">
+                    <span>СЛАЙД</span>
+                    <span>03</span>
+                </div>
+                <span class="agenda-orange-label">КОМПЕТЕНЦИИ</span>
+            </div>
+            <div class="agenda-top-cream">
+                <h2 class="agenda-cream-title">ФУНДАМЕНТАЛЬНЫЕ НАВЫКИ</h2>
+            </div>
+        </div>
+
+        <!-- Fluted Red-Orange Ribbed Glass + Overlapping 2-Column Obsidian Box -->
+        <div class="agenda-body-stage">
+            <div class="fluted-glass-backdrop"></div>
+
+            <div class="agenda-black-panel">
+                <!-- COLUMN 1: ХАРД-СКИЛЛЫ -->
+                <div class="agenda-col">
+                    <div class="agenda-col-header">
+                        <span class="agenda-col-title">// 01. ХАРД-СКИЛЛЫ (ПОМИМО&nbsp;ИИ)</span>
+                        <span class="agenda-section-pill">HARD SKILLS</span>
+                    </div>
+
+                    <div class="agenda-items-grid">
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">01</span>
+                            <div class="agenda-skill-name">Ручная доработка генераций в&nbsp;Photoshop</div>
+                        </div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">02</span>
+                            <div class="agenda-skill-name">Коммерческая ретушь и&nbsp;цветокоррекция</div>
+                        </div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">03</span>
+                            <div class="agenda-skill-name">Работа с&nbsp;типографикой и&nbsp;иерархией</div>
+                        </div>
+
+                        <div class="agenda-row-divider"></div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">04</span>
+                            <div class="agenda-skill-name">Векторная иллюстрация в&nbsp;Illustrator</div>
+                        </div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">05</span>
+                            <div class="agenda-skill-name">Видеомонтаж и&nbsp;моушн-анимация</div>
+                        </div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">06</span>
+                            <div class="agenda-skill-name">Работа с&nbsp;3D-графикой и&nbsp;сценами</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 2: СОФТ-СКИЛЛЫ -->
+                <div class="agenda-col">
+                    <div class="agenda-col-header">
+                        <span class="agenda-col-title">// 02. СОФТ-СКИЛЛЫ И&nbsp;ОРГАНИЗАЦИЯ</span>
+                        <span class="agenda-section-pill">SOFT SKILLS</span>
+                    </div>
+
+                    <div class="agenda-items-grid">
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">01</span>
+                            <div class="agenda-skill-name">Автономная удаленная работа</div>
+                        </div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">02</span>
+                            <div class="agenda-skill-name">Всегда оставаться на&nbsp;связи</div>
+                        </div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">03</span>
+                            <div class="agenda-skill-name">Ответственный подход к&nbsp;работе</div>
+                        </div>
+
+                        <div class="agenda-row-divider"></div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">04</span>
+                            <div class="agenda-skill-name">Умение договариваться и&nbsp;слышать</div>
+                        </div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">05</span>
+                            <div class="agenda-skill-name">Точное соблюдение дедлайнов</div>
+                        </div>
+
+                        <div class="agenda-skill-item">
+                            <span class="agenda-big-num">06</span>
+                            <div class="agenda-skill-name">Быстрое самообучение под&nbsp;рынок</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STANDALONE CENTERED BENTO BLOCK: ПРОГРАММЫ (5) + НЕЙРОСЕТИ (10) -->
+            <div class="agenda-tools-bento-wrap">
+                <!-- LEFT BENTO: ПРОГРАММЫ (5 ПЛАШЕК В СЕТКЕ 4x2) -->
+                <div class="tools-bento-group">
+                    <div class="tools-bento-header">
+                        <span class="tools-bento-label">// ПРОГРАММЫ:</span>
+                    </div>
+                    <div class="bento-grid-programs">
+                        <!-- 1. Adobe Photoshop (Tall 1x2, Col 1) -->
+                        <div class="bento-tool-tile tile-tall">
+                            <div class="tile-top-row">
+                                <span class="tile-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <rect x="2" y="2" width="20" height="20" rx="4" stroke="#FF6B3D" stroke-width="1.6"/>
+                                        <text x="4.6" y="16.2" fill="#FAF6F2" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="10.2" letter-spacing="-0.4">Ps</text>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <div class="tile-name">Adobe Photoshop</div>
+                                <span class="tile-sub">ретушь</span>
+                            </div>
+                        </div>
+
+                        <!-- 2. Figma (Wide 2x1, Row 1 Cols 2-3) -->
+                        <div class="bento-tool-tile tile-wide">
+                            <div class="tile-wide-left">
+                                <span class="tile-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                        <path d="M12 3H8.5A3.5 3.5 0 0 0 8.5 10H12V3Z" stroke="#FF6B3D"/>
+                                        <path d="M12 3H15.5A3.5 3.5 0 0 1 15.5 10H12V3Z"/>
+                                        <path d="M12 10H8.5A3.5 3.5 0 0 0 8.5 17H12V10Z"/>
+                                        <circle cx="15.5" cy="13.5" r="3.5" stroke="#FF6B3D"/>
+                                        <path d="M8.5 17A3.5 3.5 0 1 0 12 20.5V17H8.5Z"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div class="tile-name">Figma</div>
+                                    <span class="tile-sub">инфографика</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Blender (Compact 1x1, Row 1 Col 4) -->
+                        <div class="bento-tool-tile tile-compact">
+                            <span class="tile-icon-box" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="13.5" cy="14" r="6" stroke="#FAF6F2"/>
+                                    <circle cx="13.5" cy="14" r="2.3" fill="#FF6B3D" stroke="none"/>
+                                    <path d="M13.5 8L6 4M8.5 10.5L2.5 10.5" stroke="#FF6B3D"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <div class="tile-name">Blender</div>
+                                <span class="tile-sub">3д сцены</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. Capcut (Compact 1x1, Row 2 Col 2) -->
+                        <div class="bento-tool-tile tile-compact">
+                            <span class="tile-icon-box" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="5" width="14" height="14" rx="3"/>
+                                    <path d="M9 8.5L21 15.5M9 15.5L21 8.5" stroke="#FF6B3D"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <div class="tile-name">Capcut</div>
+                                <span class="tile-sub">монтаж</span>
+                            </div>
+                        </div>
+
+                        <!-- 5. Adobe Illustrator (Wide 2x1, Row 2 Cols 3-4) -->
+                        <div class="bento-tool-tile tile-wide">
+                            <div class="tile-wide-left">
+                                <span class="tile-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <rect x="2" y="2" width="20" height="20" rx="4" stroke="#FF6B3D" stroke-width="1.6"/>
+                                        <text x="5.4" y="16.2" fill="#FAF6F2" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="10.2" letter-spacing="-0.3">Ai</text>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div class="tile-name">Adobe Illustrator</div>
+                                    <span class="tile-sub">векторные макеты</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT BENTO: НЕЙРОСЕТИ (10 ПЛАШЕК В СЕТКЕ 7x2) -->
+                <div class="tools-bento-group">
+                    <div class="tools-bento-header">
+                        <span class="tools-bento-label">// НЕЙРОСЕТИ:</span>
+                    </div>
+                    <div class="bento-grid-ai">
+                        <!-- 1. Midjourney (Tall 1x2, Col 1) -->
+                        <div class="bento-tool-tile tile-tall">
+                            <div class="tile-top-row">
+                                <span class="tile-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 3C14.5 7 16 11 16 15H8C9.5 11.5 11 7.5 12 3Z" stroke="#FAF6F2"/>
+                                        <path d="M16 7.5C18 10 19 12.5 19 15H16.5" stroke="#FF6B3D"/>
+                                        <path d="M4 18.5C7 17.3 10 19.7 13 18.5C16 17.3 18 19.5 20 18.5" stroke="#FF6B3D"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <div class="tile-name">Midjourney</div>
+                                <span class="tile-sub">фото</span>
+                            </div>
+                        </div>
+
+                        <!-- 2. NanoBanana Pro (Wide 2x1, Row 1 Cols 2-3) -->
+                        <div class="bento-tool-tile tile-wide">
+                            <div class="tile-wide-left">
+                                <span class="tile-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 17.5C11.5 18.5 17.5 13.5 18.5 6.5C15.5 10.5 10.5 14 6 14.5C4.8 14.7 4.8 17.2 6 17.5Z" stroke="#FF6B3D"/>
+                                        <path d="M9 5L10 7.5L12.5 8.5L10 9.5L9 12L8 9.5L5.5 8.5L8 7.5L9 5Z" fill="#FAF6F2" stroke="none"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div class="tile-name">NanoBanana Pro</div>
+                                    <span class="tile-sub">фото</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Google Omni Flash (Tall 1x2, Col 4) -->
+                        <div class="bento-tool-tile tile-tall">
+                            <div class="tile-top-row">
+                                <span class="tile-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M13 2L4.5 13H11.5L10.5 22L19.5 11H12.5L13 2Z" stroke="#FF6B3D" fill="rgba(255,107,61,0.2)"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <div class="tile-name">Google Omni Flash</div>
+                                <span class="tile-sub">видео</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. ChatGPT (Compact 1x1, Row 1 Col 5) -->
+                        <div class="bento-tool-tile tile-compact">
+                            <span class="tile-icon-box" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="3.2" stroke="#FF6B3D"/>
+                                    <path d="M12 3.5A4.5 4.5 0 0 1 16.5 8v2.5M19.3 7.7A4.5 4.5 0 0 1 17.7 13.8L15.5 15M19.3 16.3A4.5 4.5 0 0 1 13.2 17.9L11 16.6M12 20.5A4.5 4.5 0 0 1 7.5 16v-2.5M4.7 16.3A4.5 4.5 0 0 1 6.3 10.2L8.5 9M4.7 7.7A4.5 4.5 0 0 1 10.8 6.1L13 7.4"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <div class="tile-name">ChatGPT</div>
+                                <span class="tile-sub">текст, фото</span>
+                            </div>
+                        </div>
+
+                        <!-- 5. Gemini (Compact 1x1, Row 1 Col 6) -->
+                        <div class="bento-tool-tile tile-compact">
+                            <span class="tile-icon-box" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C12.4 7.3 16.7 11.6 22 12C16.7 12.4 12.4 16.7 12 22C11.6 16.7 7.3 12.4 2 12C7.3 11.6 11.6 7.3 12 2Z" stroke="#FF6B3D" stroke-width="1.7" fill="rgba(255,107,61,0.18)"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <div class="tile-name">Gemini</div>
+                                <span class="tile-sub">текст, фото</span>
+                            </div>
+                        </div>
+
+                        <!-- 6. Suno (Compact 1x1, Row 1 Col 7) -->
+                        <div class="bento-tool-tile tile-compact">
+                            <span class="tile-icon-box" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                                    <circle cx="12" cy="12" r="8" stroke="#FAF6F2"/>
+                                    <circle cx="12" cy="12" r="2.5" fill="#FF6B3D" stroke="none"/>
+                                    <path d="M12 2V4M12 20V22M2 12H4M20 12H22" stroke="#FF6B3D"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <div class="tile-name">Suno</div>
+                                <span class="tile-sub">музыка</span>
+                            </div>
+                        </div>
+
+                        <!-- 7. SeeDance 2.5 (Compact 1x1, Row 2 Col 2) -->
+                        <div class="bento-tool-tile tile-compact">
+                            <span class="tile-icon-box" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="8,6 18,12 8,18" fill="rgba(255,107,61,0.25)" stroke="#FF6B3D"/>
+                                    <path d="M4 7V17"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <div class="tile-name">SeeDance 2.5</div>
+                                <span class="tile-sub">видео</span>
+                            </div>
+                        </div>
+
+                        <!-- 8. Kling (Compact 1x1, Row 2 Col 3) -->
+                        <div class="bento-tool-tile tile-compact">
+                            <span class="tile-icon-box" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="16" rx="3"/>
+                                    <path d="M9 8V16M15 8L9.5 12L15 16" stroke="#FF6B3D"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <div class="tile-name">Kling</div>
+                                <span class="tile-sub">видео</span>
+                            </div>
+                        </div>
+
+                        <!-- 9. ElevenLabs (Wide 2x1, Row 2 Cols 5-6) -->
+                        <div class="bento-tool-tile tile-wide">
+                            <div class="tile-wide-left">
+                                <span class="tile-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                                        <line x1="9" y1="5" x2="9" y2="19" stroke="#FAF6F2"/>
+                                        <line x1="15" y1="5" x2="15" y2="19" stroke="#FF6B3D"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div class="tile-name">ElevenLabs</div>
+                                    <span class="tile-sub">озвучка</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10. Lyria3 (Compact 1x1, Row 2 Col 7) -->
+                        <div class="bento-tool-tile tile-compact">
+                            <span class="tile-icon-box" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                    <path d="M4 12V13M8 8V16M12 5V19M16 8V16M20 11V14" stroke="#FF6B3D"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <div class="tile-name">Lyria3</div>
+                                <span class="tile-sub">TTS, музыка</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================================
+         SLIDE 04: DARK RED-ORANGE GRADIENT — ШИРОКИЙ СПЕКТР ТОВАРОВ
+         ================================================================= -->
+    <div class="slide-wrapper-dark">
+        <section class="slide nav-section" id="slide-4">
+            <div>
+                <div class="proposal-meta-bar">
+                    <div class="meta-left">
+                        <div class="slide-pill-capsule">
+                            <span>СЛАЙД</span>
+                            <span>04</span>
+                        </div>
+                        <span>РАБОТА С&nbsp;ШИРОКИМ СПЕКТРОМ ТОВАРОВ</span>
+                    </div>
+                    <div class="meta-right">
+                        <span>→ ГЕНЕРАЦИЯ ОКРУЖЕНИЯ И&nbsp;КЛЮЧЕВЫХ КАДРОВ</span>
+                    </div>
+                </div>
+
+                <div class="slide-top-header">
+                    <h2 class="editorial-serif-display" style="margin-bottom: 0;">
+                        ШИРОКИЙ СПЕКТР<br>
+                        ТОВАРОВ
+                    </h2>
+                    <a href="https://brandianna.ru/case1.html" target="_blank" class="btn-proposal">Смотреть весь кейс на&nbsp;сайте ↗</a>
+                </div>
+
+                <div class="grid-3">
+                    <div class="visual-item">
+                        <img src="images/Инфографика с помощью AI/bh-05.webp" alt="Электроника и FMCG" class="img-zoom" onclick="openLightbox(this.src)">
+                        <div class="visual-caption"><span class="idx-tag">01 //</span> Электроника и&nbsp;FMCG</div>
+                    </div>
+                    <div class="visual-item">
+                        <img src="images/Инфографика с помощью AI/bh-01.webp" alt="Трансформация исходника До и После" class="img-zoom" onclick="openLightbox(this.src)">
+                        <div class="visual-caption"><span class="idx-tag">02 //</span> Трансформация исходника (До&nbsp;/ После)</div>
+                    </div>
+                    <div class="visual-item">
+                        <img src="images/Инфографика с помощью AI/bh-06.webp" alt="Аксессуары, сумки и бьюти" class="img-zoom" onclick="openLightbox(this.src)">
+                        <div class="visual-caption"><span class="idx-tag">03 //</span> Аксессуары, сумки и&nbsp;бьюти</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =================================================================
+         SLIDE 05: LIGHT CREAM — ЭВОЛЮЦИЯ КАРТОЧКИ (ДО / ПОСЛЕ)
+         ================================================================= -->
+    <div class="slide-wrapper-light">
+        <div class="corner-glow-tl"></div>
+        <section class="slide nav-section" id="slide-5">
+            <div>
+                <div class="proposal-meta-bar">
+                    <div class="meta-left">
+                        <div class="slide-pill-capsule">
+                            <span>СЛАЙД</span>
+                            <span>05</span>
+                        </div>
+                        <span>КЕЙС «ТРАФАРЕТОВО» • СТЕНОВЫЕ ПАНЕЛИ ИЗ&nbsp;ХДФ</span>
+                    </div>
+                    <div class="meta-right">
+                        <span>→ РОСТ CTR ×2.4 (+180%)</span>
+                    </div>
+                </div>
+
+                <div class="slide-top-header">
+                    <h2 class="editorial-serif-display" style="margin-bottom: 0;">
+                        Эволюция карточки
+                    </h2>
+                    <a href="https://www.ozon.ru/product/reyki-dekorativnye-na-stenu-stenovye-paneli-reechnye-interernye-40-sht-50-mm-h-500-mm-1-kv-m-2234651438/?at=1oWq1XkBOqrhIBmd4v3mT6ilNew8Jz-9&amp;sh=uvg-UqVfSw" target="_blank" class="btn-proposal">Смотреть карточку на&nbsp;Ozon ↗</a>
+                </div>
+
+                <div class="grid-2">
+                    <div class="visual-item" style="overflow: hidden; border-radius: 12px; border: 1px solid var(--light-line); box-shadow: 0 14px 34px rgba(13, 12, 14, 0.08); max-height: 510px;">
+                        <img src="images/Sonoma/slide-02.webp" alt="До и После: Рейки Дуб Сонома" class="img-zoom" style="object-position: center 58%; transform: scale(1.06); border: none; box-shadow: none;" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="visual-item">
+                        <img src="images/Sonoma/slide-03.webp" alt="Золотая пятерка слайдов" class="img-zoom" onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =================================================================
+         SLIDE 06: DARK RED-ORANGE GRADIENT — ИНЖЕНЕРНАЯ СХЕМА И ПОСАДКА В ВЫДАЧЕ OZON
+         ================================================================= -->
+    <div class="slide-wrapper-dark">
+        <section class="slide nav-section" id="slide-6">
+            <div>
+                <div class="proposal-meta-bar">
+                    <div class="meta-left">
+                        <div class="slide-pill-capsule">
+                            <span>СЛАЙД</span>
+                            <span>06</span>
+                        </div>
+                        <span>ТЕХНИЧЕСКАЯ ТОЧНОСТЬ И&nbsp;ПРОВЕРКА В&nbsp;ВЫДАЧЕ</span>
+                    </div>
+                    <div class="meta-right">
+                        <span>→ -35% ВОЗВРАТОВ И&nbsp;НЕВЫКУПОВ</span>
+                    </div>
+                </div>
+
+                <div class="slide-top-header">
+                    <h2 class="editorial-serif-display" style="margin-bottom: 0;">
+                        ИНЖЕНЕРНЫЕ СХЕМЫ<br>
+                        И&nbsp;ТЕСТ В&nbsp;ВЫДАЧЕ
+                    </h2>
+                </div>
+
+                <div class="grid-2">
+                    <div class="visual-item">
+                        <img src="images/Sonoma/slide-05.webp" alt="Расчет площади и габариты упаковки" class="img-zoom" onclick="openLightbox(this.src)">
+                        <div class="visual-caption"><span class="idx-tag">01 //</span> Таблица расчета площади и&nbsp;габариты упаковки (-35% возвратов)</div>
+                    </div>
+                    <div class="visual-item">
+                        <img src="images/Перчатка/slide-04.webp" alt="Тест в выдаче Ozon на ноутбуке и смартфоне" class="img-zoom" onclick="openLightbox(this.src)">
+                        <div class="visual-caption"><span class="idx-tag">02 //</span> Проверка читаемости в&nbsp;реальной сетке Ozon</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =================================================================
+         SLIDE 07: DARK RED-ORANGE GRADIENT — ВИДЕООБЛОЖКИ И AI-АНИМАЦИЯ
+         ================================================================= -->
+    <div class="slide-wrapper-dark">
+        <section class="slide nav-section" id="slide-7">
+            <div>
+                <div class="proposal-meta-bar">
+                    <div class="meta-left">
+                        <div class="slide-pill-capsule">
+                            <span>СЛАЙД</span>
+                            <span>07</span>
+                        </div>
+                        <span>ВИДЕООБЛОЖКИ • OMNI FLASH &amp; SEEDANCE</span>
+                    </div>
+                    <div class="meta-right">
+                        <span>→ ЗАХВАТ ВНИМАНИЯ В&nbsp;ПЕРВЫЕ 2&nbsp;СЕКУНДЫ</span>
+                    </div>
+                </div>
+
+                <div class="slide-top-header">
+                    <h2 class="editorial-serif-display" style="margin-bottom: 0;">
+                        ЗАХВАТ ВНИМАНИЯ
+                    </h2>
+                    <a href="https://brandianna.ru/case2.html" target="_blank" class="btn-proposal">Смотреть видео-кейсы ↗</a>
+                </div>
+
+                <div class="grid-4">
+                    <div class="visual-item">
+                        <video src="images/Видео-креативы/preview_nether.mp4" poster="images/Видео-креативы/preview_nether_poster.webp" class="video-clean" controls muted loop playsinline></video>
+                        <div class="visual-caption"><span class="idx-tag">01 //</span> OGNImo: Световая панель</div>
+                    </div>
+                    <div class="visual-item">
+                        <video src="images/Видео-креативы/preview_traf_map_world_50x75_venge_sonoma.mp4" poster="images/Видео-креативы/preview_traf_map_poster.webp" class="video-clean" controls muted loop playsinline></video>
+                        <div class="visual-caption"><span class="idx-tag">02 //</span> Трафаретово: Карта мира</div>
+                    </div>
+                    <div class="visual-item">
+                        <video src="images/Видео-креативы/preview_pan_5025_orbita3_tabak_bl.mp4" poster="images/Видео-креативы/preview_pan_5025_orbita3_poster.webp" class="video-clean" controls muted loop playsinline></video>
+                        <div class="visual-caption"><span class="idx-tag">03 //</span> Трафаретово: Панели ХДФ</div>
+                    </div>
+                    <div class="visual-item">
+                        <video src="images/Видео-креативы/Mira3.mp4" poster="images/Видео-креативы/mira3_poster.webp" class="video-clean" controls muted loop playsinline></video>
+                        <div class="visual-caption"><span class="idx-tag">04 //</span> AI-ведущая для&nbsp;обзоров</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =================================================================
+         SLIDE 08: LIGHT CREAM — FASHION-СЕГМЕНТ (ФОРМАТ 3:4)
+         ================================================================= -->
+    <div class="slide-wrapper-light">
+        <div class="corner-glow-tr"></div>
+        <section class="slide nav-section" id="slide-8">
+            <div>
+                <div class="proposal-meta-bar">
+                    <div class="meta-left">
+                        <div class="slide-pill-capsule">
+                            <span>СЛАЙД</span>
+                            <span>08</span>
+                        </div>
+                        <span>НЕЙРОФОТОСЕССИИ ДЛЯ&nbsp;ОДЕЖДЫ, ОБУВИ И&nbsp;АКСЕССУАРОВ</span>
+                    </div>
+                    <div class="meta-right">
+                        <span>→ ЭКОНОМИЯ БЮДЖЕТА НА&nbsp;СТУДИИ ДО&nbsp;85%</span>
+                    </div>
+                </div>
+
+                <div class="slide-top-header">
+                    <h2 class="editorial-serif-display" style="margin-bottom: 0;">
+                        FASHION-СЕГМЕНТ<br>
+                        И&nbsp;НЕЙРОФОТОСЕССИИ
+                    </h2>
+                </div>
+
+                <div class="grid-3">
+                    <div class="visual-item">
+                        <div class="fashion-media-frame">
+                            <img src="images/fashion_alldiamond_cover.jpg" alt="ALLDIAMOND" class="img-zoom" style="max-height:none; border:none; border-radius:0;" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="fashion-caption-bar">
+                            <div class="visual-caption"><span class="idx-tag">01 //</span> ALLDIAMOND</div>
+                            <a href="https://brandianna.ru/case9.html" target="_blank" class="case-ext-link">Кейс ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="visual-item">
+                        <div class="fashion-media-frame">
+                            <img src="images/fashion_oldmoney_cover.jpg" alt="Old Money" class="img-zoom" style="max-height:none; border:none; border-radius:0;" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="fashion-caption-bar">
+                            <div class="visual-caption"><span class="idx-tag">02 //</span> Коллекция Old Money</div>
+                            <a href="https://brandianna.ru/case7.html" target="_blank" class="case-ext-link">Кейс ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="visual-item">
+                        <div class="fashion-media-frame">
+                            <video src="images/Видео-креативы/Model_walking_in_luxury_sneakers_202608102001.mp4" autoplay loop muted playsinline controls></video>
+                        </div>
+                        <div class="fashion-caption-bar">
+                            <div class="visual-caption"><span class="idx-tag">03 //</span> Видео-походка в&nbsp;кроссовках</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =================================================================
+         SLIDE 09: DARK RED-ORANGE GRADIENT — РАЗБОР КАРТОЧКИ (КРУПНЫЕ СЛАЙДЫ + ПЛЮСЫ/МИНУСЫ/ЧТО ПОПРАВИТЬ)
+         ================================================================= -->
+    <div class="slide-wrapper-dark">
+        <section class="slide nav-section" id="slide-9">
+            <div>
+                <div class="proposal-meta-bar">
+                    <div class="meta-left">
+                        <div class="slide-pill-capsule">
+                            <span>СЛАЙД</span>
+                            <span>09</span>
+                        </div>
+                        <span>РАЗБОР КАРТОЧКИ FUTURETECH • АРТИКУЛ OZON 5962515921</span>
+                    </div>
+                    <div class="meta-right">
+                        <span>→ ПЛЮСЫ, МИНУСЫ И&nbsp;ТОЧКИ РОСТА CTR / CR</span>
+                    </div>
+                </div>
+
+                <div class="slide-top-header" style="margin-bottom: 18px;">
+                    <h2 class="editorial-serif-display" style="margin-bottom: 0;">
+                        РАЗБОР КАРТОЧКИ
+                    </h2>
+                    <a href="https://www.ozon.ru/product/sumka-zhenskaya-shopper-na-molnii-velvetovaya-sumochka-s-remnem-na-plecho-povsednevnaya-5962515921/?_bctx=CAQQw8zwAQ&amp;at=1oWq1P_yhCdG7brzETFlW8zw1mRVjOw4&amp;hs=1&amp;sh=uvg-Utu8cg" target="_blank" class="btn-proposal">Карточка на&nbsp;Ozon ↗</a>
+                </div>
+
+                <!-- 4 Large Cards with Pluses and Minuses -->
+                <div class="audit-large-grid">
+                    <!-- Slide 1: Главная обложка -->
+                    <div class="audit-slide-card">
+                        <div class="audit-slide-img-wrap">
+                            <span class="audit-slide-tag">01 • Главная обложка</span>
+                            <img src="TEST/uptronic_bag/slide_01.jpg" alt="Слайд 1 — Обложка" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="audit-slide-body">
+                            <div class="audit-point audit-point-plus">
+                                <span class="audit-point-label">+ Плюсы</span>
+                                Крупный товар лицом, живая модель, хорошо видна форма сумки и&nbsp;логотип.
+                            </div>
+                            <div class="audit-point audit-point-minus">
+                                <span class="audit-point-label">− Минусы</span>
+                                Нет ни&nbsp;одного триггера УТП: в&nbsp;выдаче не&nbsp;видно, что шоппер <b>на&nbsp;молнии</b> и&nbsp;<b>вмещает А4 / ноутбук</b>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Габариты -->
+                    <div class="audit-slide-card">
+                        <div class="audit-slide-img-wrap">
+                            <span class="audit-slide-tag">02 • Слайд с&nbsp;габаритами</span>
+                            <img src="TEST/uptronic_bag/slide_02.jpg" alt="Слайд 2 — Габариты" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="audit-slide-body">
+                            <div class="audit-point audit-point-plus">
+                                <span class="audit-point-label">+ Плюсы</span>
+                                Чистый фон, ракурс 3/4 показывает глубину дна 12 см, понятные размеры 35×29 см.
+                            </div>
+                            <div class="audit-point audit-point-minus">
+                                <span class="audit-point-label">− Минусы</span>
+                                Тонкие пунктирные линии и&nbsp;мелкий шрифт теряются со&nbsp;смартфона; сухие цифры не&nbsp;дают ощущения вместимости.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Фурнитура и ремень -->
+                    <div class="audit-slide-card">
+                        <div class="audit-slide-img-wrap">
+                            <span class="audit-slide-tag">03 • Ремень и&nbsp;фурнитура</span>
+                            <img src="TEST/uptronic_bag/slide_04.jpg" alt="Слайд 4 — Ремень 92 см" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="audit-slide-body">
+                            <div class="audit-point audit-point-plus">
+                                <span class="audit-point-label">+ Плюсы</span>
+                                Отличный макро-план металлического карабина, крепкой строчки и&nbsp;фактуры вельвета.
+                            </div>
+                            <div class="audit-point audit-point-minus">
+                                <span class="audit-point-label">− Минусы</span>
+                                Огромное пустое белое пятно справа; текст «92 см съемный ремень» висит без&nbsp;плашки и&nbsp;визуального акцента.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Молния и вместимость -->
+                    <div class="audit-slide-card">
+                        <div class="audit-slide-img-wrap">
+                            <span class="audit-slide-tag">04 • Молния и&nbsp;внутрянка</span>
+                            <img src="TEST/uptronic_bag/slide_08.jpg" alt="Слайд 8 — Надежная молния" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="audit-slide-body">
+                            <div class="audit-point audit-point-plus">
+                                <span class="audit-point-label">+ Плюсы</span>
+                                Показано главное преимущество перед обычными шопперами — полноценная молния и&nbsp;подкладка.
+                            </div>
+                            <div class="audit-point audit-point-minus">
+                                <span class="audit-point-label">− Минусы</span>
+                                Слайд стоит только 8-м в&nbsp;галерее (до&nbsp;него доходят ~25% покупателей), не&nbsp;показаны внутренние карманы.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Воронка слева (2х3 = 6 шагов) + 3D-рендер справа -->
+                <div class="audit-bottom-split">
+                    <div class="audit-funnel-box">
+                        <span class="audit-funnel-title">// КАК ДОЛЖНА СТРОИТЬСЯ ВОРОНКА КАРТОЧКИ ДЛЯ ДАННОГО ТОВАРА:</span>
+                        <div class="audit-funnel-steps">
+                            <div class="audit-funnel-step">
+                                <span class="audit-funnel-step-num">ШАГ 01 // ЗАХВАТ ВНИМАНИЯ</span>
+                                <div class="audit-funnel-step-head">Обложка + Видеообложка</div>
+                                <div class="audit-funnel-step-desc">Товар на&nbsp;модели в&nbsp;движении (5&nbsp;сек) + 3 главных триггера: «На&nbsp;молнии • Формат А4 / Ноутбук • Плотный вельвет».</div>
+                            </div>
+                            <div class="audit-funnel-step">
+                                <span class="audit-funnel-step-num">ШАГ 02 // ГЛАВНОЕ ОТЛИЧИЕ</span>
+                                <div class="audit-funnel-step-head">Молния и&nbsp;внутрянка</div>
+                                <div class="audit-funnel-step-desc">Поднимаем с&nbsp;8-го на&nbsp;2-е место: закрытие на&nbsp;молнию, плотная подкладка и&nbsp;внутренние карманы для&nbsp;телефона и&nbsp;ключей.</div>
+                            </div>
+                            <div class="audit-funnel-step">
+                                <span class="audit-funnel-step-num">ШАГ 03 // РАЦИОНАЛЬНЫЙ ВЫБОР</span>
+                                <div class="audit-funnel-step-head">Габариты и&nbsp;вместимость</div>
+                                <div class="audit-funnel-step-desc">Крупная схема 35×29×12&nbsp;см + наглядные иконки того, что входит внутрь (ноутбук 15", папка А4, термос, зонт).</div>
+                            </div>
+                            <div class="audit-funnel-step">
+                                <span class="audit-funnel-step-num">ШАГ 04 // УДОБСТВО В ЖИЗНИ</span>
+                                <div class="audit-funnel-step-head">2 сценария носки + ремень</div>
+                                <div class="audit-funnel-step-desc">Инфографика трансформации: на&nbsp;съемном ремне 92&nbsp;см через плечо и&nbsp;на&nbsp;коротких ручках + макро металлического карабина.</div>
+                            </div>
+                            <div class="audit-funnel-step">
+                                <span class="audit-funnel-step-num">ШАГ 05 // СНЯТИЕ ВОЗРАЖЕНИЙ</span>
+                                <div class="audit-funnel-step-head">Фактура, швы и&nbsp;уход</div>
+                                <div class="audit-funnel-step-desc">Макро-зум плотного рубчика вельвета и&nbsp;ровной строчки + иконки легкого ухода (бережная стирка 30°C без&nbsp;потери формы).</div>
+                            </div>
+                            <div class="audit-funnel-step">
+                                <span class="audit-funnel-step-num">ШАГ 06 // СЦЕНАРИИ ПРИМЕНЕНИЯ</span>
+                                <div class="audit-funnel-step-head">Серия фото с&nbsp;моделью</div>
+                                <div class="audit-funnel-step-desc">Живые образы применения сумки в&nbsp;жизни (офис, учеба, прогулка, поездки) — демонстрация размеров и&nbsp;объемов относительно человека и&nbsp;общего стиля.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="audit-render-card">
+                        <div class="audit-render-img-wrap">
+                            <img src="TEST/uptronic_bag/shopper_3d_render.jpg" alt="3D-рендер вельветового шоппера" style="cursor: zoom-in;" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="audit-render-caption">3D-рендер сумки // чистый исходник для&nbsp;инфографики и&nbsp;нейрофотосессии</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =================================================================
+         SLIDE 10: DARK RED-ORANGE GRADIENT — ТВЕРДЫЕ РЕЗУЛЬТАТЫ В КРУГАХ + ПОДВАЛ
+         ================================================================= -->
+    <div class="slide-wrapper-dark">
+        <section class="slide nav-section" id="slide-10">
+            <div>
+                <div class="proposal-meta-bar">
+                    <div class="meta-left">
+                        <div class="slide-pill-capsule">
+                            <span>СЛАЙД</span>
+                            <span>10</span>
+                        </div>
+                        <span>ПОКАЗАТЕЛИ ЭФФЕКТИВНОСТИ</span>
+                    </div>
+                </div>
+
+                <div class="slide-top-header">
+                    <h2 class="editorial-serif-display" style="margin-bottom: 0;">
+                        РЕЗУЛЬТАТЫ В&nbsp;ЦИФРАХ
+                    </h2>
+                </div>
+
+                <div class="concentric-stage">
+                    <div class="circles-row">
+                        <div class="concentric-metric-card">
+                            <div class="concentric-disc-outer">
+                                <div class="concentric-disc-mid">
+                                    <div class="concentric-disc-core">
+                                        <span class="circle-val">+20%</span>
+                                        <span class="circle-unit">CTR ОБЛОЖЕК</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="circle-caption">Прирост кликабельности</div>
+                            <div class="circle-sub">По&nbsp;результатам сплит-тестов главных обложек в&nbsp;выдаче</div>
+                        </div>
+
+                        <div class="concentric-metric-card">
+                            <div class="concentric-disc-outer">
+                                <div class="concentric-disc-mid">
+                                    <div class="concentric-disc-core">
+                                        <span class="circle-val">-60%</span>
+                                        <span class="circle-unit">СКОРОСТЬ ЗАПУСКА</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="circle-caption">Экономия времени</div>
+                            <div class="circle-sub">Полная упаковка новой карточки за&nbsp;8–16 часов вместо недель студийных съемок</div>
+                        </div>
+
+                        <div class="concentric-metric-card">
+                            <div class="concentric-disc-outer">
+                                <div class="concentric-disc-mid">
+                                    <div class="concentric-disc-core">
+                                        <span class="circle-val">80%</span>
+                                        <span class="circle-unit">БЕЗ&nbsp;ПРАВОК</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="circle-caption">Приемка с&nbsp;1&nbsp;итерации</div>
+                            <div class="circle-sub">Точное попадание в&nbsp;ТЗ и&nbsp;коммерческую задачу селлера</div>
+                        </div>
+
+                        <div class="concentric-metric-card">
+                            <div class="concentric-disc-outer">
+                                <div class="concentric-disc-mid">
+                                    <div class="concentric-disc-core">
+                                        <span class="circle-val">50+</span>
+                                        <span class="circle-unit">ЛИНЕЕК ПОД&nbsp;КЛЮЧ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="circle-caption">Серии карточек</div>
+                            <div class="circle-sub">Комплексная упаковка магазинов на&nbsp;Wildberries, Ozon и&nbsp;Amazon</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Мои достижения -->
+                <div class="achievements-section">
+                    <span class="achievements-title">// МОИ ДОСТИЖЕНИЯ:</span>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-text">Контроль видеогенераций через&nbsp;3D&#8209;моделирование в&nbsp;Blender</div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-text">Автоматизация аналитики через&nbsp;агентные системы</div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-text">Настройка контент&#8209;завода для&nbsp;4&nbsp;каналов в&nbsp;соцсетях</div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-text">Вайбкодинг приложений под&nbsp;свои задачи</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exact Website Footer -->
+            <footer class="site-footer">
+                <div class="footer-copy">
+                    © 2026 brand-AI-anna • Анна Логунова. Все права защищены.
+                </div>
+                <div class="footer-socials">
+                    <a href="https://t.me/brandianna" target="_blank" class="social-icon-link" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    </a>
+                    <a href="https://vk.com/brandianna" target="_blank" class="social-icon-link" aria-label="VK">
+                        <svg viewBox="0 0 24 24"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@brandianna" target="_blank" class="social-icon-link" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    </a>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Наверх">↑</button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Full view">
+    </div>
+
+    <script>
+        const slides = Array.from(document.querySelectorAll('.nav-section'));
+        const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+
+        function getCurrentSlideIndex() {
+            const scrollY = window.scrollY + window.innerHeight / 3;
+            let idx = 0;
+            slides.forEach((s, i) => {
+                const top = s.getBoundingClientRect().top + window.scrollY;
+                if (top <= scrollY) idx = i;
+            });
+            return idx;
+        }
+
+        function prevSlide() {
+            const i = Math.max(0, getCurrentSlideIndex() - 1);
+            slides[i].scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function nextSlide() {
+            const i = Math.min(slides.length - 1, getCurrentSlideIndex() + 1);
+            slides[i].scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', () => {
+            const i = getCurrentSlideIndex();
+            navLinks.forEach((l, idx) => l.classList.toggle('active', idx === i));
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            }
+            if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('open');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+        }
+
+        // Скорость воспроизведения видео на 1-м слайде уменьшена в 1,5 раза (playbackRate = 1 / 1.5 ≈ 0.667)
+        const heroVideo = document.getElementById('hero-manifesto-video');
+        if (heroVideo) {
+            const setSlowRate = () => { heroVideo.playbackRate = 1 / 1.5; };
+            setSlowRate();
+            heroVideo.addEventListener('loadedmetadata', setSlowRate);
+            heroVideo.addEventListener('play', setSlowRate);
+        }
+
+        // Контроль полноэкранного режима для видео, чтобы ролик показывался в свой родной размер без обрезки
+        const syncVideoFullscreen = () => {
+            const fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+            document.querySelectorAll('video').forEach((v) => {
+                const isFs = fsEl === v;
+                v.classList.toggle('is-fullscreen', isFs);
+                if (isFs) {
+                    v.style.setProperty('object-fit', 'contain', 'important');
+                    v.style.setProperty('max-height', '100vh', 'important');
+                    v.style.setProperty('aspect-ratio', 'auto', 'important');
+                } else {
+                    v.style.removeProperty('object-fit');
+                    v.style.removeProperty('max-height');
+                    v.style.removeProperty('aspect-ratio');
+                }
+            });
+        };
+        document.addEventListener('fullscreenchange', syncVideoFullscreen);
+        document.addEventListener('webkitfullscreenchange', syncVideoFullscreen);
+    </script>
+</body>
+</html>
